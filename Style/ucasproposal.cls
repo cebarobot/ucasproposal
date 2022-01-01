@@ -152,8 +152,8 @@
     \setlength{\ULdepth}{0.3em}% set depth
     \expandafter\ulunify\expandafter{#2}% linebreak fix
 }
-\newcommand{\ulhshift}{-3em}% horizontal shift on underline
-\newcommand{\ulextend}[2][350pt]{% extend underline length
+\newcommand{\ulhshift}{0em}% horizontal shift on underline
+\newcommand{\ulextend}[2][285pt]{% extend underline length
     \hbox to #1{\hfill\hspace*{\ulhshift}#2\hfill}}
 %- special cell
 %- \specialcell[<align2>]{align1}{text1\\text2};
@@ -182,6 +182,8 @@
 \newcommand{\advisor}[1]{\def\ucas@value@ch@advisor{#1}}
 \def\ucas@value@ch@advisortitle{}
 \newcommand{\advisortitle}[1]{\def\ucas@value@ch@advisortitle{#1}}
+\def\ucas@value@ch@advisorinstitute{}
+\newcommand{\advisorinstitute}[1]{\def\ucas@value@ch@advisorinstitute{#1}}
 \def\ucas@value@ch@degree{}
 \newcommand{\degree}[1]{\def\ucas@value@ch@degree{#1}}
 \def\ucas@value@ch@degreetype{}
@@ -208,7 +210,7 @@
     \begin{center}
         \linespread{1.3}
         \zihao{-3}\bfseries
-        \vspace*{10pt}
+        \vspace*{30pt}
 
         {\ucas@value@ch@schoollogo}
 
@@ -216,26 +218,29 @@
 
         {\zihao{1}\bfseries\sffamily \ucas@label@ch@thesis}
 
-        \vspace*{195pt}
+        \vspace*{140pt}
 
-        \def\tabcolsep{1pt}
-        \def\arraystretch{1.2}
-        \begin{tabular}{lc}
-            %\ucas@label@ch@title & \ulenhance{\ulextend{\shortstack{\ucas@value@ch@title}}}\\
-            %\ucas@label@ch@title & \ulenhance{\ulextend{\specialcell[c]{b}{\ucas@value@ch@title}}}\\
-            \ucas@label@ch@title & \ucaslntotab{\ucas@value@ch@title}\\
-            \ucas@label@ch@author & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@author}}\ucas@label@ch@authorid\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@authorid}}\\
-            \ucas@label@ch@advisor & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisor}}\ucas@label@ch@advisortitle\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisortitle}}\\
-            \ucas@label@ch@degree & \ulenhance{\ulextend{\ucas@value@ch@degreetype\ucas@value@ch@degree}}\\
-            \ucas@label@ch@major & \ulenhance{\ulextend{\ucas@value@ch@major}}\\
-            \ucas@label@ch@field & \ulenhance{\ulextend{\ucas@value@ch@field}}\\
-            \ucas@label@ch@institute & \ucaslntotab{\ucas@value@ch@institute}\\
-            \ucas@label@ch@date & \ulenhance{\ulextend{\ucas@value@ch@date}}
-      \end{tabular}
+        {
+            \def\tabcolsep{1pt}
+            \def\arraystretch{1.3}
+            \sffamily
+            \begin{tabular}{lc}
+                %\ucas@label@ch@title & \ulenhance{\ulextend{\shortstack{\ucas@value@ch@title}}}\\
+                %\ucas@label@ch@title & \ulenhance{\ulextend{\specialcell[c]{b}{\ucas@value@ch@title}}}\\
+                \ucas@label@ch@title & \ucaslntotab{\ucas@value@ch@title}\\
+                \ucas@label@ch@author & \ulenhance{\ulextend[120pt]{\ucas@value@ch@author}}\ucas@label@ch@authorid\ulenhance{\ulextend[135pt]{\ucas@value@ch@authorid}}\\
+                \ucas@label@ch@advisor & \ulenhance{\ulextend[120pt]{\ucas@value@ch@advisor}}\ucas@label@ch@advisortitle\ulenhance{\ulextend[135pt]{\ucas@value@ch@advisortitle}}\\
+                \ucas@label@ch@advisorinstitute & \ulenhance{\ulextend{\ucas@value@ch@advisorinstitute}}\\
+                \ucas@label@ch@degree & \ulenhance{\ulextend{\ucas@value@ch@degreetype\ucas@value@ch@degree}}\\
+                \ucas@label@ch@major & \ulenhance{\ulextend{\ucas@value@ch@major}}\\
+                \ucas@label@ch@institute & \ucaslntotab{\ucas@value@ch@institute}\\
+                \ucas@label@ch@date & \ulenhance{\ulextend{\ucas@value@ch@date}}
+            \end{tabular} 
+        }
 
-      \vspace*{50pt}
+      \vspace*{80pt}
 
-      {\ucas@label@ch@mark}
+      {\sffamily\ucas@label@ch@mark}
     \end{center}
     \clearpage
     \if@twoside
