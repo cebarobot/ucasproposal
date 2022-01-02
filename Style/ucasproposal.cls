@@ -199,6 +199,12 @@
 \newcommand{\institute}[1]{\def\ucas@value@ch@institute{#1}}
 \def\ucas@value@ch@date{}
 \newcommand{\chinesedate}[1]{\def\ucas@value@ch@date{#1}}
+\def\ucas@value@ch@subjecttype{}
+\newcommand{\subjecttype}[1]{\def\ucas@value@ch@subjecttype{#1}}
+\def\ucas@value@ch@subjectproperty{}
+\newcommand{\subjectproperty}[1]{\def\ucas@value@ch@subjectproperty{#1}}
+\def\ucas@value@ch@subjectsource{}
+\newcommand{\subjectsource}[1]{\def\ucas@value@ch@subjectsource{#1}}
 %-
 %-> English item commands
 %-
@@ -321,6 +327,27 @@
     }
     \clearpage
 }
+%---------------------------------------------------------------------------%
+%->> Content Top
+%---------------------------------------------------------------------------%
+\newcommand{\makecontenttop}{
+    \begin{center}
+        \zihao{-4}
+
+        {\zihao{4}\bfseries\sffamily 毕业论文（设计）开题报告}
+
+        \vspace{5pt}
+
+        \newcolumntype{Y}{>{\centering\arraybackslash}X}
+        \begin{tabularx}{\textwidth}{|c|Y|c|Y|}
+            \hline
+            \ucas@label@ch@titlesecond & \multicolumn{3}{c|}{\ucas@value@ch@title} \\ \hline
+            \ucas@label@ch@subjecttype & \ucas@value@ch@subjecttype & 
+            \ucas@label@ch@subjectproperty & \ucas@value@ch@subjectproperty \\ \hline
+            \ucas@label@ch@subjectsource & \multicolumn{3}{c|}{\ucas@value@ch@subjectsource} \\ \hline
+        \end{tabularx}
+    \end{center}
+}
 %->> Structure elements
 %---------------------------------------------------------------------------%
 \ifucas@plain%
@@ -374,7 +401,8 @@
 %- section
 \ctexset {
     section = {
-        format = \centering\zihao{4}\sffamily,
+        % format = \centering\zihao{4}\sffamily,
+        format = \zihao{4}\sffamily,
         number = {\chinese{section}},
         aftername = \quad,
         beforeskip = {24pt},
