@@ -85,6 +85,9 @@
     \clist_use:Nn \l_tmpb_clist { \\ & }
 }
 \ExplSyntaxOff
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{tasks}
 %---------------------------------------------------------------------------%
 %->> Load class configuration
 %---------------------------------------------------------------------------%
@@ -271,6 +274,53 @@
     \fi
 }
 %---------------------------------------------------------------------------%
+%->> Instructions
+%---------------------------------------------------------------------------%
+\newcommand{\makeinstruction}{
+    \thispagestyle{empty}
+    {
+        \linespread{1.6}
+        \zihao{-4}
+
+        \vspace*{2pt}
+
+        \begin{center}
+            {\zihao{-2}\bfseries\sffamily \makebox[5.5em][s]{\ucas@label@ch@instructions}}
+        \end{center}
+
+        {
+            \begin{enumerate}[wide=0pt, leftmargin=0.74cm, labelwidth=0.74cm, align=left]
+                \item \ucas@value@ch@instructions@lineA
+                \item \ucas@value@ch@instructions@lineB
+                \item \ucas@value@ch@instructions@lineC
+                \item \ucas@value@ch@instructions@lineD
+                \item \ucas@value@ch@instructions@lineE
+                \item \ucas@value@ch@instructions@lineF
+                {
+                    \begin{tasks}[style=itemize,label={$\square$},after-item-skip=0pt,item-indent=2em](2)
+                        \task \ucas@value@ch@instructions@lineF@itemA
+                        \task \ucas@value@ch@instructions@lineF@itemB
+                        \task \ucas@value@ch@instructions@lineF@itemC
+                        \task \ucas@value@ch@instructions@lineF@itemD
+                        \task \ucas@value@ch@instructions@lineF@itemE
+                        \task \ucas@value@ch@instructions@lineF@itemF
+                        \task \ucas@value@ch@instructions@lineF@itemG
+                        \task \ucas@value@ch@instructions@lineF@itemH
+                        \task \ucas@value@ch@instructions@lineF@itemI
+                        \task \ucas@value@ch@instructions@lineF@itemJ
+                        \task \ucas@value@ch@instructions@lineF@itemK
+                        \task \ucas@value@ch@instructions@lineF@itemL
+                        \task \ucas@value@ch@instructions@lineF@itemM
+                        \task \ucas@value@ch@instructions@lineF@itemN
+                    \end{tasks}
+                }
+                \item \ucas@value@ch@instructions@lineG
+                \item \ucas@value@ch@instructions@lineH
+            \end{enumerate}
+        }
+    }
+    \clearpage
+}
 %->> Structure elements
 %---------------------------------------------------------------------------%
 \ifucas@plain%
