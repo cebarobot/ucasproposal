@@ -247,9 +247,9 @@
             \end{tabular} 
         }
 
-      \vspace*{80pt}
+        \vspace*{80pt}
 
-      {\sffamily\ucas@label@ch@mark}
+        {\sffamily\ucas@label@ch@mark}
     \end{center}
     \clearpage
     \if@twoside
@@ -348,6 +348,45 @@
         \end{tabularx}
     \end{center}
 }
+%---------------------------------------------------------------------------%
+%->> Opinions
+%---------------------------------------------------------------------------%
+\newcommand{\makeopinions}{
+    \begin{table*}
+        \begin{tabular}{|p{\textwidth}|}
+            \hline
+            {
+                {\zihao{-4}\bfseries\sffamily \ucas@label@ch@opinions@advisoropinion}
+    
+                \vspace*{25em}
+    
+                {\hfill{} {\ucas@label@ch@opinions@advisorsignature \hspace*{8em}}}
+        
+                {\hfill{} {\ucas@label@ch@opinions@date}}
+    
+                \vspace*{4em}
+            } \\
+            \hline
+            {
+                {\zihao{-4}\bfseries\sffamily \ucas@label@ch@opinions@instituteopinion}
+    
+                \vspace*{10em}
+                
+                \hspace{2em} \makebox[20em][s]{\ucas@label@ch@opinions@instituteresult}
+    
+                \vspace*{4em}
+    
+                {\hfill{} {\ucas@label@ch@opinions@institutesignature \hspace*{8em}}}
+        
+                {\hfill{} {\ucas@label@ch@opinions@date}}
+    
+                \vspace*{4em}
+            } \\
+            \hline
+        \end{tabular}
+    \end{table*}
+}
+%---------------------------------------------------------------------------%
 %->> Structure elements
 %---------------------------------------------------------------------------%
 \ifucas@plain%
