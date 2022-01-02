@@ -334,7 +334,7 @@
     \begin{center}
         \zihao{-4}
 
-        {\zihao{4}\bfseries\sffamily 毕业论文（设计）开题报告}
+        {\zihao{4}\bfseries\sffamily \ucas@label@ch@thesissecond}
 
         \vspace{5pt}
 
