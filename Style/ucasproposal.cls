@@ -86,6 +86,7 @@
 }
 \ExplSyntaxOff
 \RequirePackage{tabularx}
+\RequirePackage{makecell}
 \RequirePackage{enumitem}
 \RequirePackage{tasks}
 %---------------------------------------------------------------------------%
@@ -199,6 +200,8 @@
 \newcommand{\institute}[1]{\def\ucas@value@ch@institute{#1}}
 \def\ucas@value@ch@date{}
 \newcommand{\chinesedate}[1]{\def\ucas@value@ch@date{#1}}
+\def\ucas@value@ch@titlesecond{}
+\newcommand{\titlesecond}[1]{\def\ucas@value@ch@titlesecond{#1}}
 \def\ucas@value@ch@subjecttype{}
 \newcommand{\subjecttype}[1]{\def\ucas@value@ch@subjecttype{#1}}
 \def\ucas@value@ch@subjectproperty{}
@@ -341,7 +344,7 @@
         \newcolumntype{Y}{>{\centering\arraybackslash}X}
         \begin{tabularx}{\textwidth}{|c|Y|c|Y|}
             \hline
-            \ucas@label@ch@titlesecond & \multicolumn{3}{c|}{\ucas@value@ch@title} \\ \hline
+            \ucas@label@ch@titlesecond & \multicolumn{3}{c|}{\makecell[c]{\ucas@value@ch@titlesecond}} \\ \hline
             \ucas@label@ch@subjecttype & \ucas@value@ch@subjecttype & 
             \ucas@label@ch@subjectproperty & \ucas@value@ch@subjectproperty \\ \hline
             \ucas@label@ch@subjectsource & \multicolumn{3}{c|}{\ucas@value@ch@subjectsource} \\ \hline
